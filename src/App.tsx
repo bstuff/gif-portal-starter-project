@@ -4,6 +4,7 @@ import React, { ChangeEventHandler, useEffect, useState } from 'react';
 
 import './App.css';
 import twitterLogo from './assets/twitter-logo.svg';
+import { baseAccount } from './helpers/baseAccount';
 import idl from './idl.json';
 
 // Constants
@@ -11,10 +12,7 @@ const TWITTER_HANDLE = '_buildspace';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 // SystemProgram is a reference to the Solana runtime!
-const { SystemProgram, Keypair } = web3;
-
-// Create a keypair for the account that will hold the GIF data.
-let baseAccount = Keypair.generate();
+const { SystemProgram } = web3;
 
 // Get our program's id from the IDL file.
 const programID = new PublicKey(idl.metadata.address);
