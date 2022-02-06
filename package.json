@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@solana/wallet-adapter-phantom": "^0.9.3",
+    "buffer": "^6.0.3",
     "prettier": "^2.5.1"
   }
 }
