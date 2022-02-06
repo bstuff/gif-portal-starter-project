@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import twitterLogo from './assets/twitter-logo.svg';
+import React, { ChangeEventHandler, useEffect, useState } from 'react';
 import './App.css';
+import twitterLogo from './assets/twitter-logo.svg';
 
 // Constants
 const TWITTER_HANDLE = '_buildspace';
@@ -10,7 +10,7 @@ const App = () => {
   // State
   const [walletAddress, setWalletAddress] = useState(null);
   const [inputValue, setInputValue] = useState('');
-  const [gifList, setGifList] = useState([]);
+  const [gifList, setGifList] = useState<string[]>([]);
 
   // Actions
   const checkIfWalletIsConnected = async () => {
@@ -50,7 +50,7 @@ const App = () => {
     }
   };
 
-  const onInputChange = (event) => {
+  const onInputChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     const { value } = event.target;
     setInputValue(value);
   };
